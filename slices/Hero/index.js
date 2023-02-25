@@ -31,9 +31,9 @@ export default function Hero({ slice }) {
               components={{
                 heading1: ({ children }) => (
                   <Heading
-                    color="white.200"
-                    fontWeight="500"
-                    fontSize={['xl', '2xl', '2xl', '2xl', '4xl']}
+                    color="white.500"
+                    fontWeight={500}
+                    fontSize={['xl', '2xl', '4xl']}
                   >
                     {children}
                   </Heading>
@@ -44,12 +44,11 @@ export default function Hero({ slice }) {
             <PrismicRichText
               field={slice.primary.text}
               components={{
-                heading1: ({ children }) => (
+                paragraph: ({ children }) => (
                   <Text
-                    color="white.100"
+                    color="white.200"
                     fontSize={['0.8rem', 'xl']}
                     maxW={['100%', '100%', '100%', '550px']}
-                    as="div"
                   >
                     {children}
                   </Text>
