@@ -1,0 +1,37 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "logo": {
+        "origin": {
+          "id": "gTV2osuOsJc",
+          "url": "https://images.unsplash.com/photo-1584441405886-bc91be61e56a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwxMnx8bG9nb3xlbnwwfHx8fDE2NzczNTkxOTg&ixlib=rb-4.0.3&q=80",
+          "width": 6924,
+          "height": 9340
+        },
+        "url": "https://images.unsplash.com/photo-1584441405886-bc91be61e56a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwxMnx8bG9nb3xlbnwwfHx8fDE2NzczNTkxOTg&ixlib=rb-4.0.3&q=80&rect=0%2C3805%2C6924%2C1731&w=184&h=46",
+        "width": 184,
+        "height": 46,
+        "edit": {
+          "background": "transparent",
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 3805
+          }
+        },
+        "credits": null,
+        "alt": "Logo",
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

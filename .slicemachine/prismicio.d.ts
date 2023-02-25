@@ -7,7 +7,35 @@ type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
 /** Content for Page documents */
-type PageDocumentData = Record<string, never>;
+interface PageDocumentData {
+    /**
+     * Title field in *Page*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Slice Zone field in *Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice;
 /**
  * Page document from Prismic
  *
@@ -17,13 +45,121 @@ type PageDocumentData = Record<string, never>;
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PageDocumentData>, "page", Lang>;
+export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = PageDocument;
+/**
+ * Primary content in Header → Primary
+ *
+ */
+interface HeaderSliceDefaultPrimary {
+    /**
+     * Logo field in *Header → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: header.primary.logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Header Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Header`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeaderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeaderSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Header*
+ *
+ */
+type HeaderSliceVariation = HeaderSliceDefault;
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `header`
+ * - **Description**: `Header`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
+/**
+ * Primary content in Hero → Primary
+ *
+ */
+interface HeroSliceDefaultPrimary {
+    /**
+     * Title field in *Hero → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: hero.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Text field in *Hero → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: hero.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+    /**
+     * Background Image field in *Hero → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.backgroundImage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    backgroundImage: prismicT.ImageField<never>;
+    /**
+     * Icone field in *Hero → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.icone
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    icone: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Hero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Hero*
+ *
+ */
+type HeroSliceVariation = HeroSliceDefault;
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: `Hero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocument, AllDocumentTypes };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice };
     }
 }

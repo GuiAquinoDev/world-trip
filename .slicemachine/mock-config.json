@@ -1,5 +1,17 @@
 {
   "_cts": {
     "page": {}
+  },
+  "slices": {
+    "Hero": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Header": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

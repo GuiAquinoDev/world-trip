@@ -8,12 +8,12 @@ import { repositoryName } from '../../prismicio'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
-      <PrismicPreview repositoryName={repositoryName}>
-        <ChakraProvider>
+    <ChakraProvider>
+      <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
+        <PrismicPreview repositoryName={repositoryName}>
           <Component {...pageProps} />
-        </ChakraProvider>
-      </PrismicPreview>
-    </PrismicProvider>
+        </PrismicPreview>
+      </PrismicProvider>
+    </ChakraProvider>
   )
 }
