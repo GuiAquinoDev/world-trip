@@ -22,30 +22,33 @@ export default function Features({ slice }) {
   })
 
   return (
-    <Box as={'section'} px={['1.75rem']} py={'2.25rem'}>
+    <Box as={'section'} px={['1.75rem']} py={['2.25rem', '5rem']}>
       <Box as={'div'} mx={'auto'} width="100%" maxW={'1160px'}>
         <Grid
           templateColumns={[
+            'repeat(2, minmax(0, 1fr))',
             'repeat(2, minmax(0, 1fr))',
             'repeat(5, minmax(0, 1fr))',
           ]}
           w="100%"
           flexWrap="wrap"
-          alignItems={'center'}
+          gridGap={'1rem'}
         >
           {slice.items.map((item, i) => (
             <Flex
-              justifyContent="center"
-              gap={['2', '4', '24px']}
-              flexDirection={['row', 'column']}
-              align="center"
+              alignItems={'center'}
+              justifyContent={'flex-start'}
               key={i}
+              flexDirection={['row', 'column']}
+              gap={'0.5rem'}
+              px={['1rem', 0]}
             >
               {isMobile ? (
-                <Stack maxW={'5.313rem'}>
+                <Stack>
                   <Image
                     src={item.featureIcon.url}
                     alt={item.featureIcon.alt}
+                    maxW={'5.313rem'}
                   />
                 </Stack>
               ) : (
@@ -57,6 +60,7 @@ export default function Features({ slice }) {
                 color="gray.900"
                 fontWeight={[500, 600]}
                 fontSize={['md', 'xl', '2xl']}
+                textAlign={'center'}
               >
                 {item.text}
               </Text>

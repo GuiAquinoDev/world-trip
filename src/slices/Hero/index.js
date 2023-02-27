@@ -19,10 +19,12 @@ export default function Hero({ slice }) {
   return (
     <Box
       as={'section'}
+      maxH={'23.013rem'}
       px={['1.75rem']}
       py={['1.75rem', '5rem']}
       bgImage={`url(${slice.primary.backgroundImage.url})`}
       bgRepeat={'no-repeat'}
+      bgSize={'100% 20.938rem'}
     >
       <Box
         as={'div'}
