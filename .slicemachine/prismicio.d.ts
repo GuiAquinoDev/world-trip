@@ -122,15 +122,25 @@ interface HeroSliceDefaultPrimary {
      */
     backgroundImage: prismicT.ImageField<never>;
     /**
-     * Icone field in *Hero → Primary*
+     * Icon field in *Hero → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.icone
+     * - **API ID Path**: hero.primary.icon
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    icone: prismicT.ImageField<never>;
+    icon: prismicT.ImageField<never>;
+    /**
+     * Icon Side field in *Hero → Primary*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.iconSide
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    iconSide: prismicT.SelectField<"Left" | "Right">;
 }
 /**
  * Default variation for Hero Slice

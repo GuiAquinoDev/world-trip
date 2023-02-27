@@ -2,7 +2,7 @@ import { SliceZone } from '@prismicio/react'
 import { GetStaticProps } from 'next'
 
 import { createClient } from '../../prismicio'
-import { components } from '../../slices'
+import { components } from '../slices'
 
 export default function Home({ page, navigation, settings }) {
   return <SliceZone slices={page.data.slices} components={components} />
