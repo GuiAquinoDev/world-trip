@@ -35,7 +35,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice;
+type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice;
 /**
  * Page document from Prismic
  *
@@ -47,6 +47,55 @@ type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice;
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = PageDocument;
+/**
+ * Item in Features → Items
+ *
+ */
+export interface FeaturesSliceDefaultItem {
+    /**
+     * Icone field in *Features → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: features.items[].featureIcon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    featureIcon: prismicT.ImageField<never>;
+    /**
+     * text field in *Features → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: features.items[].text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Features Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Features`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeaturesSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<FeaturesSliceDefaultItem>>;
+/**
+ * Slice variation for *Features*
+ *
+ */
+type FeaturesSliceVariation = FeaturesSliceDefault;
+/**
+ * Features Shared Slice
+ *
+ * - **API ID**: `features`
+ * - **Description**: `Features`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeaturesSlice = prismicT.SharedSlice<"features", FeaturesSliceVariation>;
 /**
  * Primary content in Header → Primary
  *
@@ -170,6 +219,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice };
     }
 }

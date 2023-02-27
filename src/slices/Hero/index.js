@@ -19,8 +19,8 @@ export default function Hero({ slice }) {
   return (
     <Box
       as={'section'}
-      px={['1.75rem', '4rem', '3rem', '8.75rem']}
-      py={['1.75rem', '4.75rem']}
+      px={['1.75rem']}
+      py={['1.75rem', '5rem']}
       bgImage={`url(${slice.primary.backgroundImage.url})`}
       bgRepeat={'no-repeat'}
     >
@@ -28,7 +28,7 @@ export default function Hero({ slice }) {
         as={'div'}
         mx={'auto'}
         width="100%"
-        maxW={'1xxl'}
+        maxW={'72.5rem'}
         maxH={['23rem', '18.263rem']}
       >
         <Grid

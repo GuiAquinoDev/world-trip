@@ -7,6 +7,10 @@ export const theme = extendTheme({
       '500': '#F5F8FA',
       '200': '#DADADA',
     },
+
+    gray: {
+      '900': '#45585B',
+    },
   },
 
   fonts: {
@@ -38,6 +42,7 @@ export const theme = extendTheme({
     global: {
       body: {
         bg: 'white',
+        color: 'gray.900',
         maxWidth: '1440px',
       },
     },

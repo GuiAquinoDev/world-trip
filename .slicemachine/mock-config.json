@@ -13,5 +13,13 @@
         "primary": {}
       }
     }
+  },
+  "src/slices": {
+    "Features": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
   }
 }
