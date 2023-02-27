@@ -22,16 +22,16 @@ export default function Features({ slice }) {
   })
 
   return (
-    <Box as={'section'} px={['1.75rem', '8.75rem']}>
-      <Box as={'div'} mx={'auto'} width="100%">
+    <Box as={'section'} px={['1.75rem']} py={'2.25rem'}>
+      <Box as={'div'} mx={'auto'} width="100%" maxW={'1160px'}>
         <Grid
           templateColumns={[
-            'repeat(1, minmax(0, 1fr))',
+            'repeat(2, minmax(0, 1fr))',
             'repeat(5, minmax(0, 1fr))',
           ]}
           w="100%"
-          maxW="1160px"
           flexWrap="wrap"
+          alignItems={'center'}
         >
           {slice.items.map((item, i) => (
             <Flex
