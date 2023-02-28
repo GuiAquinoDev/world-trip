@@ -35,7 +35,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice;
+type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice | SeparatorSlice | CallToActionSlice;
 /**
  * Page document from Prismic
  *
@@ -47,6 +47,45 @@ type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice;
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = PageDocument;
+/**
+ * Primary content in CallToAction → Primary
+ *
+ */
+interface CallToActionSliceDefaultPrimary {
+    /**
+     * Texto field in *CallToAction → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: call_to_action.primary.callToActionText
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    callToActionText: prismicT.RichTextField;
+}
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `CallToAction`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CallToActionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CallToActionSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *CallToAction*
+ *
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: `CallToAction`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CallToActionSlice = prismicT.SharedSlice<"call_to_action", CallToActionSliceVariation>;
 /**
  * Item in Features → Items
  *
@@ -214,11 +253,51 @@ type HeroSliceVariation = HeroSliceDefault;
  *
  */
 export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
+/**
+ * Primary content in Separator → Primary
+ *
+ */
+interface SeparatorSliceDefaultPrimary {
+    /**
+     * Separador  field in *Separator → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: separator.primary.isSeparator
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    isSeparator: prismicT.BooleanField;
+}
+/**
+ * Default variation for Separator Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Separator`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SeparatorSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SeparatorSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Separator*
+ *
+ */
+type SeparatorSliceVariation = SeparatorSliceDefault;
+/**
+ * Separator Shared Slice
+ *
+ * - **API ID**: `separator`
+ * - **Description**: `Separator`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SeparatorSlice = prismicT.SharedSlice<"separator", SeparatorSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice };
     }
 }

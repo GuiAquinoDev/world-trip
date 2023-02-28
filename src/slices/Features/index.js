@@ -1,5 +1,4 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
 import {
   Box,
   Grid,
@@ -23,7 +22,7 @@ export default function Features({ slice }) {
 
   return (
     <Box as={'section'} px={['1.75rem']} py={['2.25rem', '5rem']}>
-      <Box as={'div'} mx={'auto'} width="100%" maxW={'1160px'}>
+      <Box as={'div'} mx={'auto'} width="100%" maxW={'72.5rem'}>
         <Grid
           templateColumns={[
             'repeat(2, minmax(0, 1fr))',

@@ -20,6 +20,16 @@
         "primary": {},
         "items": {}
       }
+    },
+    "CallToAction": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Separator": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }
