@@ -35,7 +35,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice | SeparatorSlice | CallToActionSlice;
+type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice | SeparatorSlice | CallToActionSlice | SliderSlice;
 /**
  * Page document from Prismic
  *
@@ -293,11 +293,80 @@ type SeparatorSliceVariation = SeparatorSliceDefault;
  *
  */
 export type SeparatorSlice = prismicT.SharedSlice<"separator", SeparatorSliceVariation>;
+/**
+ * Item in Slider → Items
+ *
+ */
+export interface SliderSliceDefaultItem {
+    /**
+     * Continent ID field in *Slider → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].continentId
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    continentId: prismicT.KeyTextField;
+    /**
+     * Banner field in *Slider → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].banner
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    banner: prismicT.ImageField<never>;
+    /**
+     * Continent field in *Slider → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].continent
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    continent: prismicT.KeyTextField;
+    /**
+     * Description field in *Slider → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Slider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Slider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SliderSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<SliderSliceDefaultItem>>;
+/**
+ * Slice variation for *Slider*
+ *
+ */
+type SliderSliceVariation = SliderSliceDefault;
+/**
+ * Slider Shared Slice
+ *
+ * - **API ID**: `slider`
+ * - **Description**: `Slider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SliderSlice = prismicT.SharedSlice<"slider", SliderSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
     }
 }

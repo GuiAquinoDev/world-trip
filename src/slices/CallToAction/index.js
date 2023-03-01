@@ -9,7 +9,7 @@ import { Box, Heading, Text } from '@chakra-ui/react'
  */
 export default function CallToAction({ slice }) {
   return (
-    <Box as={'section'} px={['1.75rem']} py={['2.25rem', '5rem']}>
+    <Box as={'section'} px={['1.75rem']} py={['2.25rem', '3.25rem']}>
       <Box
         as={'div'}
         mx={'auto'}

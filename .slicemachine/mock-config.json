@@ -30,6 +30,13 @@
       "default": {
         "primary": {}
       }
+    },
+    "Banner": {},
+    "Slider": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

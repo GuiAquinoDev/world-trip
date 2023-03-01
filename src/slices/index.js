@@ -5,6 +5,7 @@ import Features from './Features';
 import Header from './Header';
 import Hero from './Hero';
 import Separator from './Separator';
+import Slider from './Slider';
 
 export {
 	CallToAction,
@@ -12,6 +13,7 @@ export {
 	Header,
 	Hero,
 	Separator,
+	Slider,
 };
 
 export const components = {
@@ -20,4 +22,5 @@ export const components = {
 	header: Header,
 	hero: Hero,
 	separator: Separator,
+	slider: Slider,
 };

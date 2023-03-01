@@ -40,6 +40,9 @@
             },
             "call_to_action": {
               "type": "SharedSlice"
+            },
+            "slider": {
+              "type": "SharedSlice"
             }
           }
         }
