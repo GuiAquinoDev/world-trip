@@ -32,7 +32,7 @@ export default function Slider({ slice }) {
           >
             {slice.items.map((item) => (
               <SwiperSlide key={item.continentId}>
-                <Link href={`/home/${item.continentId}`}>
+                <Link href={`/${item.continentId}`}>
                   <Flex
                     backgroundPosition="center"
                     backgroundRepeat="no-repeat"

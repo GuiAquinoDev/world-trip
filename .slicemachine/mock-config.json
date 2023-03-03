@@ -1,6 +1,7 @@
 {
   "_cts": {
-    "page": {}
+    "page": {},
+    "continent": {}
   },
   "slices": {
     "Hero": {
@@ -36,6 +37,16 @@
       "default": {
         "primary": {},
         "items": {}
+      }
+    },
+    "Hero": {
+      "continentBanner": {
+        "primary": {}
+      }
+    },
+    "ContinentBanner": {
+      "default": {
+        "primary": {}
       }
     }
   }

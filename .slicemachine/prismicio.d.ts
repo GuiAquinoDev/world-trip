@@ -6,6 +6,46 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Continent documents */
+interface ContinentDocumentData {
+    /**
+     * Title field in *Continent*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: continent.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Continent*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: continent.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ContinentDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Continent → Slice Zone*
+ *
+ */
+type ContinentDocumentDataSlicesSlice = HeaderSlice | ContinentBannerSlice;
+/**
+ * Continent document from Prismic
+ *
+ * - **API ID**: `continent`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContinentDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ContinentDocumentData>, "continent", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
     /**
@@ -46,7 +86,7 @@ type PageDocumentDataSlicesSlice = HeaderSlice | HeroSlice | FeaturesSlice | Sep
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes = PageDocument;
+export type AllDocumentTypes = ContinentDocument | PageDocument;
 /**
  * Primary content in CallToAction → Primary
  *
@@ -86,6 +126,55 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
  *
  */
 export type CallToActionSlice = prismicT.SharedSlice<"call_to_action", CallToActionSliceVariation>;
+/**
+ * Primary content in ContinentBanner → Primary
+ *
+ */
+interface ContinentBannerSliceDefaultPrimary {
+    /**
+     * Continente field in *ContinentBanner → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: continent_banner.primary.continent
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    continent: prismicT.KeyTextField;
+    /**
+     * Banner field in *ContinentBanner → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: continent_banner.primary.bannerContinent
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    bannerContinent: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for ContinentBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ContinentBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContinentBannerSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ContinentBannerSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ContinentBanner*
+ *
+ */
+type ContinentBannerSliceVariation = ContinentBannerSliceDefault;
+/**
+ * ContinentBanner Shared Slice
+ *
+ * - **API ID**: `continent_banner`
+ * - **Description**: `ContinentBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContinentBannerSlice = prismicT.SharedSlice<"continent_banner", ContinentBannerSliceVariation>;
 /**
  * Item in Features → Items
  *
@@ -367,6 +456,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
+        export type { ContinentDocumentData, ContinentDocumentDataSlicesSlice, ContinentDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContinentBannerSliceDefaultPrimary, ContinentBannerSliceDefault, ContinentBannerSliceVariation, ContinentBannerSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
     }
 }

@@ -10,6 +10,7 @@ export const theme = extendTheme({
     white: {
       '900': '#FFFFFF',
       '500': '#F5F8FA',
+      '300': '#999999',
       '200': '#DADADA',
     },
 
@@ -87,7 +88,7 @@ export const theme = extendTheme({
       },
 
       '.swiper-pagination-bullet': {
-        background: 'gray.90',
+        background: 'gray.300',
         width: '16px',
         height: '16px',
 

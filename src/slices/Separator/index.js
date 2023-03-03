@@ -7,7 +7,6 @@ import { Divider } from '@chakra-ui/react'
  * @param { SeparatorProps }
  */
 export default function Separator({ slice }) {
-  console.log(slice)
   return (
     <>
       {slice.primary.isSeparator === true && (

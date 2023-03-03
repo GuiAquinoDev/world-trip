@@ -14,6 +14,10 @@ const routes = [
     type: 'page',
     path: '/',
   },
+  {
+    type: 'continent',
+    path: '/:uid',
+  },
 ]
 
 /**
