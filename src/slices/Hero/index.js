@@ -35,7 +35,12 @@ export default function Hero({ slice }) {
       >
         <Grid
           gridAutoFlow={['dense column']}
-          templateColumns={['1fr 0', '1fr 0', '1fr', 'repeat(2, minmax(1fr,0)']}
+          templateColumns={[
+            '1fr 0',
+            '1fr 0',
+            '1fr',
+            'repeat(2, minmax(1fr,0))',
+          ]}
           justifyContent={'space-between'}
         >
           <GridItem
@@ -61,7 +66,7 @@ export default function Hero({ slice }) {
                 field={slice.primary.text}
                 components={{
                   paragraph: ({ children }) => (
-                    <Text color="white.200" fontSize={['0.8rem', 'xl']}>
+                    <Text color="white.300" fontSize={['0.8rem', 'xl']}>
                       {children}
                     </Text>
                   ),

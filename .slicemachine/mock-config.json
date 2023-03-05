@@ -48,6 +48,12 @@
       "default": {
         "primary": {}
       }
+    },
+    "ContinentContent": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

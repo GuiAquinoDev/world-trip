@@ -35,7 +35,7 @@ interface ContinentDocumentData {
  * Slice for *Continent → Slice Zone*
  *
  */
-type ContinentDocumentDataSlicesSlice = HeaderSlice | ContinentBannerSlice;
+type ContinentDocumentDataSlicesSlice = HeaderSlice | ContinentBannerSlice | ContinentContentSlice;
 /**
  * Continent document from Prismic
  *
@@ -175,6 +175,82 @@ type ContinentBannerSliceVariation = ContinentBannerSliceDefault;
  *
  */
 export type ContinentBannerSlice = prismicT.SharedSlice<"continent_banner", ContinentBannerSliceVariation>;
+/**
+ * Primary content in ContinentContent → Primary
+ *
+ */
+interface ContinentContentSliceDefaultPrimary {
+    /**
+     * Bio field in *ContinentContent → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: continent_content.primary.continentBio
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    continentBio: prismicT.RichTextField;
+}
+/**
+ * Item in ContinentContent → Items
+ *
+ */
+export interface ContinentContentSliceDefaultItem {
+    /**
+     * Number Item field in *ContinentContent → Items*
+     *
+     * - **Field Type**: Number
+     * - **Placeholder**: *None*
+     * - **API ID Path**: continent_content.items[].numberItem
+     * - **Documentation**: https://prismic.io/docs/core-concepts/number
+     *
+     */
+    numberItem: prismicT.NumberField;
+    /**
+     * Item field in *ContinentContent → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: continent_content.items[].continentItem
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    continentItem: prismicT.KeyTextField;
+    /**
+     * hasInfo field in *ContinentContent → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: continent_content.items[].hasinfo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    hasinfo: prismicT.BooleanField;
+}
+/**
+ * Default variation for ContinentContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ContinentContent`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContinentContentSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ContinentContentSliceDefaultPrimary>, Simplify<ContinentContentSliceDefaultItem>>;
+/**
+ * Slice variation for *ContinentContent*
+ *
+ */
+type ContinentContentSliceVariation = ContinentContentSliceDefault;
+/**
+ * ContinentContent Shared Slice
+ *
+ * - **API ID**: `continent_content`
+ * - **Description**: `ContinentContent`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContinentContentSlice = prismicT.SharedSlice<"continent_content", ContinentContentSliceVariation>;
 /**
  * Item in Features → Items
  *
@@ -456,6 +532,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ContinentDocumentData, ContinentDocumentDataSlicesSlice, ContinentDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContinentBannerSliceDefaultPrimary, ContinentBannerSliceDefault, ContinentBannerSliceVariation, ContinentBannerSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
+        export type { ContinentDocumentData, ContinentDocumentDataSlicesSlice, ContinentDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContinentBannerSliceDefaultPrimary, ContinentBannerSliceDefault, ContinentBannerSliceVariation, ContinentBannerSlice, ContinentContentSliceDefaultPrimary, ContinentContentSliceDefaultItem, ContinentContentSliceDefault, ContinentContentSliceVariation, ContinentContentSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
     }
 }

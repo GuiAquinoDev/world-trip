@@ -1,0 +1,49 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "continentBio": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Veniam enim magna velit eiusmod incididunt esse nisi irure aute aliquip. Aliqua culpa irure id nulla dolor officia adipisicing."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "continentItem",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "understanding",
+              "type": "Text"
+            }
+          ],
+          [
+            "hasinfo",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          ],
+          [
+            "numberItem",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "23",
+              "type": "Number"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

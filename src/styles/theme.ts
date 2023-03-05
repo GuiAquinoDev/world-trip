@@ -10,8 +10,8 @@ export const theme = extendTheme({
     white: {
       '900': '#FFFFFF',
       '500': '#F5F8FA',
-      '300': '#999999',
-      '200': '#DADADA',
+      '300': '#DADADA',
+      '200': '#999999',
     },
 
     gray: {

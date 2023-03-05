@@ -10,7 +10,7 @@ export default function ContinentBanner({ slice }) {
   return (
     <Box
       as={'section'}
-      h={['150px', '350px', '31.25rem']}
+      h={['9.375rem', '21.875rem', '31.25rem']}
       w="100%"
       bgImage={`url(${slice.primary.bannerContinent.url} )`}
       backgroundRepeat={'no-repeat'}
@@ -29,10 +29,14 @@ export default function ContinentBanner({ slice }) {
           justify={['center', 'flex-end']}
           align={['center', 'flex-start']}
           flexDirection="column"
-          py={['0', '59px']}
-          px={['0', '140px']}
+          py={['0', '3.688rem']}
+          px={['0', '8.75rem']}
         >
-          <Text color="white" fontSize={['28px', '48px']} fontWeight={600}>
+          <Text
+            color={'white.900'}
+            fontSize={['1.75rem', '3rem']}
+            fontWeight={600}
+          >
             {slice.primary.continent}
           </Text>
         </Flex>

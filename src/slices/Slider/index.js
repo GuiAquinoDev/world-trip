@@ -1,6 +1,5 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { PrismicRichText } from '@prismicio/react'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -62,20 +61,13 @@ export default function Slider({ slice }) {
                         >
                           {item.continent}
                         </Heading>
-                        <PrismicRichText
-                          field={item.description}
-                          components={{
-                            paragraph: ({ children }) => (
-                              <Text
-                                color="white.200"
-                                fontWeight={700}
-                                fontSize={['0.875rem', '1rem', '1.5rem']}
-                              >
-                                {children}
-                              </Text>
-                            ),
-                          }}
-                        />
+                        <Text
+                          color="white.300"
+                          fontWeight={700}
+                          fontSize={['0.875rem', '1rem', '1.5rem']}
+                        >
+                          {item.description}
+                        </Text>
                       </Flex>
                     </VStack>
                   </Flex>
