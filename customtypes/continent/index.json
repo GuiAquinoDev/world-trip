@@ -32,6 +32,9 @@
             },
             "continent_content": {
               "type": "SharedSlice"
+            },
+            "cities": {
+              "type": "SharedSlice"
             }
           }
         }

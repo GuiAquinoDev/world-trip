@@ -54,6 +54,12 @@
         "primary": {},
         "items": {}
       }
+    },
+    "Cities": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

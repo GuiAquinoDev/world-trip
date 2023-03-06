@@ -1,0 +1,57 @@
+{
+  "id": "cities",
+  "type": "SharedSlice",
+  "name": "Cities",
+  "description": "Cities",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Cities",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "cityImage": {
+          "type": "Image",
+          "config": {
+            "label": "City image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cityName": {
+          "type": "Text",
+          "config": {
+            "label": "City Name",
+            "placeholder": ""
+          }
+        },
+        "stateName": {
+          "type": "Text",
+          "config": {
+            "label": "State Name",
+            "placeholder": ""
+          }
+        },
+        "stateFlag": {
+          "type": "Image",
+          "config": {
+            "label": "State Flag",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

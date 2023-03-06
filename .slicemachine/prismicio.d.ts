@@ -35,7 +35,7 @@ interface ContinentDocumentData {
  * Slice for *Continent → Slice Zone*
  *
  */
-type ContinentDocumentDataSlicesSlice = HeaderSlice | ContinentBannerSlice | ContinentContentSlice;
+type ContinentDocumentDataSlicesSlice = HeaderSlice | ContinentBannerSlice | ContinentContentSlice | CitiesSlice;
 /**
  * Continent document from Prismic
  *
@@ -126,6 +126,91 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
  *
  */
 export type CallToActionSlice = prismicT.SharedSlice<"call_to_action", CallToActionSliceVariation>;
+/**
+ * Primary content in Cities → Primary
+ *
+ */
+interface CitiesSliceDefaultPrimary {
+    /**
+     * Title field in *Cities → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: cities.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Item in Cities → Items
+ *
+ */
+export interface CitiesSliceDefaultItem {
+    /**
+     * City image field in *Cities → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: cities.items[].cityImage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    cityImage: prismicT.ImageField<never>;
+    /**
+     * City Name field in *Cities → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: cities.items[].cityName
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cityName: prismicT.KeyTextField;
+    /**
+     * State Name field in *Cities → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: cities.items[].stateName
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    stateName: prismicT.KeyTextField;
+    /**
+     * State Flag field in *Cities → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: cities.items[].stateFlag
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    stateFlag: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Cities Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Cities`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CitiesSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CitiesSliceDefaultPrimary>, Simplify<CitiesSliceDefaultItem>>;
+/**
+ * Slice variation for *Cities*
+ *
+ */
+type CitiesSliceVariation = CitiesSliceDefault;
+/**
+ * Cities Shared Slice
+ *
+ * - **API ID**: `cities`
+ * - **Description**: `Cities`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CitiesSlice = prismicT.SharedSlice<"cities", CitiesSliceVariation>;
 /**
  * Primary content in ContinentBanner → Primary
  *
@@ -532,6 +617,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ContinentDocumentData, ContinentDocumentDataSlicesSlice, ContinentDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, ContinentBannerSliceDefaultPrimary, ContinentBannerSliceDefault, ContinentBannerSliceVariation, ContinentBannerSlice, ContinentContentSliceDefaultPrimary, ContinentContentSliceDefaultItem, ContinentContentSliceDefault, ContinentContentSliceVariation, ContinentContentSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
+        export type { ContinentDocumentData, ContinentDocumentDataSlicesSlice, ContinentDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, CallToActionSliceDefaultPrimary, CallToActionSliceDefault, CallToActionSliceVariation, CallToActionSlice, CitiesSliceDefaultPrimary, CitiesSliceDefaultItem, CitiesSliceDefault, CitiesSliceVariation, CitiesSlice, ContinentBannerSliceDefaultPrimary, ContinentBannerSliceDefault, ContinentBannerSliceVariation, ContinentBannerSlice, ContinentContentSliceDefaultPrimary, ContinentContentSliceDefaultItem, ContinentContentSliceDefault, ContinentContentSliceVariation, ContinentContentSlice, FeaturesSliceDefaultItem, FeaturesSliceDefault, FeaturesSliceVariation, FeaturesSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, SeparatorSliceDefaultPrimary, SeparatorSliceDefault, SeparatorSliceVariation, SeparatorSlice, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice };
     }
 }
