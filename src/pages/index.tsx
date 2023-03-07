@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next'
 import { createClient } from '../../prismicio'
 import { components } from '../slices'
 
-export default function Home({ page, navigation, settings }) {
+export default function Home({ page }) {
   return <SliceZone slices={page.data.slices} components={components} />
 }
 

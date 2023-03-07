@@ -7,14 +7,11 @@ import {
   Text,
   useBreakpointValue,
   Stack,
+  Icon,
 } from '@chakra-ui/react'
+import { FeaturesProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.FeaturesSlice} FeaturesSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<FeaturesSlice>} FeaturesProps
- * @param { FeaturesProps }
- */
-export default function Features({ slice }) {
+export default function Features({ slice }: FeaturesProps) {
   const isMobile = useBreakpointValue({
     base: false,
     sm: true,
@@ -44,7 +41,8 @@ export default function Features({ slice }) {
             >
               {isMobile ? (
                 <Stack>
-                  <Image
+                  <Icon
+                    as={Image}
                     src={item.featureIcon.url}
                     alt={item.featureIcon.alt}
                     maxW={'5.313rem'}

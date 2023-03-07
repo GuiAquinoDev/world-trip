@@ -42,6 +42,9 @@
     "Hero": {
       "continentBanner": {
         "primary": {}
+      },
+      "default": {
+        "primary": {}
       }
     },
     "ContinentBanner": {

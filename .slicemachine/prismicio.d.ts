@@ -460,15 +460,15 @@ interface HeroSliceDefaultPrimary {
      */
     backgroundImage: prismicT.ImageField<never>;
     /**
-     * Icon field in *Hero → Primary*
+     * Banner Icon field in *Hero → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.icon
+     * - **API ID Path**: hero.primary.bannerIcon
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    icon: prismicT.ImageField<never>;
+    bannerIcon: prismicT.ImageField<never>;
     /**
      * Icon Side field in *Hero → Primary*
      *

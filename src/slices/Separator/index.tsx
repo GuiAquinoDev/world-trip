@@ -1,12 +1,8 @@
 import React from 'react'
 import { Divider } from '@chakra-ui/react'
+import { SeparatorProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.SeparatorSlice} SeparatorSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<SeparatorSlice>} SeparatorProps
- * @param { SeparatorProps }
- */
-export default function Separator({ slice }) {
+export default function Separator({ slice }: SeparatorProps) {
   return (
     <>
       {slice.primary.isSeparator === true && (

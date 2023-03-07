@@ -37,10 +37,10 @@
             "thumbnails": []
           }
         },
-        "icon": {
+        "bannerIcon": {
           "type": "Image",
           "config": {
-            "label": "Icon",
+            "label": "Banner Icon",
             "constraint": {},
             "thumbnails": []
           }

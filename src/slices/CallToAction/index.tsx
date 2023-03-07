@@ -1,13 +1,9 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 import { Box, Heading, Text } from '@chakra-ui/react'
+import { CallProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.CallToActionSlice} CallToActionSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<CallToActionSlice>} CallToActionProps
- * @param { CallToActionProps }
- */
-export default function CallToAction({ slice }) {
+export default function CallToAction({ slice }: CallProps) {
   return (
     <Box as={'section'} px={['1.75rem']} py={['2.25rem', '3.25rem']}>
       <Box

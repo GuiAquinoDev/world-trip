@@ -2,13 +2,9 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 import { Grid, GridItem, Text, Box, Icon, VStack } from '@chakra-ui/react'
 import { CiCircleInfo } from 'react-icons/ci'
+import { ContinentProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.ContinentContentSlice} ContinentContentSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<ContinentContentSlice>} ContinentContentProps
- * @param {ContinentContentProps}
- */
-export default function ContinentContent({ slice }) {
+export default function ContinentContent({ slice }: ContinentProps) {
   return (
     <Box as="section" px={['1rem']} py={['1.5rem', '5rem']}>
       <Box maxWidth="72.5rem" margin="auto">

@@ -1,20 +1,11 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
 import { Navigation, Pagination } from 'swiper'
 import { Box, Flex, VStack, Heading, Text } from '@chakra-ui/react'
-
 import Link from 'next/link'
-/**
- * @typedef {import("@prismicio/client").Content.SliderSlice} SliderSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<SliderSlice>} SliderProps
- * @param { SliderProps }
- */
-export default function Slider({ slice }) {
+import { SliderProps } from '@/@types/types'
+
+export default function Slider({ slice }: SliderProps) {
   return (
     <Box as={'section'} px={[0, 0, '1.75rem']} paddingBottom={[6, 10]}>
       <Box as={'div'} mx={'auto'} width="100%" maxW={'77.5rem'}>

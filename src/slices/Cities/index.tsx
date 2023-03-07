@@ -1,12 +1,8 @@
 import React from 'react'
-import { Box, Heading, Grid, Flex, Text, Image } from '@chakra-ui/react'
+import { Box, Heading, Grid, Flex, Text, Image, Icon } from '@chakra-ui/react'
+import { CitiesProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.CitiesSlice} CitiesSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<CitiesSlice>} CitiesProps
- * @param { CitiesProps }
- */
-export default function Cities({ slice }) {
+export default function Cities({ slice }: CitiesProps) {
   return (
     <Box as="section" px={['1rem']}>
       <Box maxWidth="72.5rem" margin="auto">
@@ -23,8 +19,8 @@ export default function Cities({ slice }) {
           {slice.items.map((item, i) => (
             <Box maxW={'16rem'} key={i} mt={'40px'} mx={'auto'}>
               <Image
-                src={item.cityImage.url}
-                alt={item.cityImage.alt}
+                src={item.cityImage.url!}
+                alt={item.cityImage.alt!}
                 borderTopRadius={'4px'}
               />
               <Flex
@@ -55,7 +51,8 @@ export default function Cities({ slice }) {
                   </Text>
                 </Flex>
                 <Box margin={'auto'}>
-                  <Image
+                  <Icon
+                    as={Image}
                     width={'100%'}
                     src={item.stateFlag.url}
                     alt={item.stateFlag.alt}

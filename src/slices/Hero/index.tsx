@@ -7,15 +7,12 @@ import {
   Box,
   Grid,
   GridItem,
+  Icon,
 } from '@chakra-ui/react'
 import { PrismicRichText } from '@prismicio/react'
+import { HeroProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.HeroSlice} HeroSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<HeroSlice>} HeroProps
- * @param { HeroProps }
- */
-export default function Hero({ slice }) {
+export default function Hero({ slice }: HeroProps) {
   return (
     <Box
       as={'section'}
@@ -80,7 +77,11 @@ export default function Hero({ slice }) {
             maxW={'26.072rem'}
             w={'100%'}
           >
-            <Image src={slice.primary.icon.url} alt={slice.primary.icon.alt} />
+            <Icon
+              as={Image}
+              src={slice.primary.bannerIcon.url}
+              alt={slice.primary.bannerIcon.alt}
+            />
           </GridItem>
         </Grid>
       </Box>

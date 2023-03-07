@@ -1,12 +1,8 @@
 import React from 'react'
 import { Flex, Text, VStack, Box } from '@chakra-ui/react'
+import { ContinentBannerProps } from '@/@types/types'
 
-/**
- * @typedef {import("@prismicio/client").Content.ContinentBannerSlice} ContinentBannerSlice
- * @typedef {import("@prismicio/react").SliceComponentProps<ContinentBannerSlice>} ContinentBannerProps
- * @param { ContinentBannerProps }
- */
-export default function ContinentBanner({ slice }) {
+export default function ContinentBanner({ slice }: ContinentBannerProps) {
   return (
     <Box
       as={'section'}
