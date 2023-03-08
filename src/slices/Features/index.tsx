@@ -43,9 +43,9 @@ export default function Features({ slice }: FeaturesProps) {
                 <Stack>
                   <Icon
                     as={Image}
+                    fontSize={85}
                     src={item.featureIcon.url}
                     alt={item.featureIcon.alt}
-                    maxW={'5.313rem'}
                   />
                 </Stack>
               ) : (

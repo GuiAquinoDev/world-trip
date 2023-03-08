@@ -7,7 +7,6 @@ import {
   Box,
   Grid,
   GridItem,
-  Icon,
 } from '@chakra-ui/react'
 import { PrismicRichText } from '@prismicio/react'
 import { HeroProps } from '@/@types/types'
@@ -77,10 +76,9 @@ export default function Hero({ slice }: HeroProps) {
             maxW={'26.072rem'}
             w={'100%'}
           >
-            <Icon
-              as={Image}
-              src={slice.primary.bannerIcon.url}
-              alt={slice.primary.bannerIcon.alt}
+            <Image
+              src={slice.primary.bannerIcon.url!}
+              alt={slice.primary.bannerIcon.alt!}
             />
           </GridItem>
         </Grid>

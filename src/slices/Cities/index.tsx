@@ -53,7 +53,7 @@ export default function Cities({ slice }: CitiesProps) {
                 <Box margin={'auto'}>
                   <Icon
                     as={Image}
-                    width={'100%'}
+                    fontSize={30}
                     src={item.stateFlag.url}
                     alt={item.stateFlag.alt}
                   />
