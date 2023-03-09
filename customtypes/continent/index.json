@@ -12,11 +12,13 @@
           "placeholder": ""
         }
       },
-      "title": {
-        "type": "Text",
+      "continentTitle": {
+        "type": "StructuredText",
         "config": {
           "label": "Title",
-          "placeholder": ""
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
         }
       },
       "slices": {

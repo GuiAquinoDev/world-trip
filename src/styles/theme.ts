@@ -16,7 +16,7 @@ export const theme = extendTheme({
 
     gray: {
       '900': '#45585B',
-      '200': 'rgba(28, 20, 1, 0.35)',
+      '200': '#080704a8',
       '100': 'rgba(28, 20, 1, 0.35)',
     },
   },
@@ -49,7 +49,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'white',
+        bg: 'white.500',
         color: 'gray.900',
         maxWidth: '1440px',
       },

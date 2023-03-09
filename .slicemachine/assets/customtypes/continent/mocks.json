@@ -1,18 +1,24 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "mixture"
+    "value": "vegetable"
   },
-  "title": {
-    "__TYPE__": "FieldContent",
-    "value": "drop",
-    "type": "Text"
+  "continentTitle": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Lesson"
+        }
+      }
+    ]
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "header$72a6fd1d-dcbd-4cfd-9d10-0ae552ef1514",
+        "key": "header$aa00c094-baa6-4dba-88fb-6f9058982193",
         "name": "header",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -22,18 +28,18 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-                "width": 8640,
-                "height": 8640
+                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+                "width": 4480,
+                "height": 4480
               },
-              "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?rect=0%2C3240%2C8640%2C2160&w=184&h=46",
+              "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?rect=0%2C1680%2C4480%2C1120&w=184&h=46",
               "width": 184,
               "height": 46,
               "edit": {
                 "zoom": 1,
                 "crop": {
                   "x": 0,
-                  "y": 3240
+                  "y": 1680
                 },
                 "background": "transparent"
               },
@@ -49,7 +55,7 @@
         }
       },
       {
-        "key": "continent_banner$b113ec35-5c08-4145-9a09-5fdb9238fb1f",
+        "key": "continent_banner$0d620612-1b15-4827-9e12-588f33121000",
         "name": "continent_banner",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -57,20 +63,20 @@
           "primary": {
             "continent": {
               "__TYPE__": "FieldContent",
-              "value": "figure",
+              "value": "fur",
               "type": "Text"
             },
             "bannerContinent": {
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
-                "width": 4480,
-                "height": 4480
+                "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                "width": 3456,
+                "height": 4320
               },
-              "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
-              "width": 4480,
-              "height": 4480,
+              "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+              "width": 3456,
+              "height": 4320,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -91,7 +97,7 @@
         }
       },
       {
-        "key": "continent_content$ecac0645-7fff-48d5-b1df-cf3c13c4f34e",
+        "key": "continent_content$bb4be00b-31f0-4a8f-bbfa-aa3e4ae9fa49",
         "name": "continent_content",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -103,7 +109,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Officia officia laboris ullamco cillum cillum ex. Reprehenderit nostrud eiusmod consequat laboris irure laboris qui esse nisi."
+                    "text": "Dolore nulla duis consectetur culpa consequat eu est culpa ex consequat cillum deserunt fugiat."
                   }
                 }
               ]
@@ -117,7 +123,7 @@
                   "numberItem",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "55",
+                    "value": "75",
                     "type": "Number"
                   }
                 ],
@@ -125,7 +131,7 @@
                   "continentItem",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "bright",
+                    "value": "pack",
                     "type": "Text"
                   }
                 ],
@@ -133,7 +139,7 @@
                   "hasinfo",
                   {
                     "__TYPE__": "BooleanContent",
-                    "value": true
+                    "value": false
                   }
                 ]
               ]
@@ -142,7 +148,7 @@
         }
       },
       {
-        "key": "cities$0a08cdcd-53d1-409c-908f-a78d1aa27897",
+        "key": "cities$986c31eb-ad03-404b-87a9-7d015a564da5",
         "name": "cities",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -150,7 +156,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "hole",
+              "value": "classroom",
               "type": "Text"
             }
           },
@@ -164,13 +170,13 @@
                     "__TYPE__": "ImageContent",
                     "origin": {
                       "id": "main",
-                      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
-                      "width": 3560,
-                      "height": 5340
+                      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+                      "width": 3500,
+                      "height": 2338
                     },
-                    "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
-                    "width": 3560,
-                    "height": 5340,
+                    "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+                    "width": 3500,
+                    "height": 2338,
                     "edit": {
                       "zoom": 1,
                       "crop": {
@@ -186,7 +192,7 @@
                   "cityName",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "film",
+                    "value": "differ",
                     "type": "Text"
                   }
                 ],
@@ -194,16 +200,32 @@
                   "stateName",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "airplane",
+                    "value": "manner",
                     "type": "Text"
                   }
                 ],
                 [
                   "stateFlag",
                   {
-                    "__TYPE__": "FieldContent",
-                    "value": "pleasure",
-                    "type": "Text"
+                    "__TYPE__": "ImageContent",
+                    "origin": {
+                      "id": "main",
+                      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+                      "width": 4016,
+                      "height": 6016
+                    },
+                    "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+                    "width": 4016,
+                    "height": 6016,
+                    "edit": {
+                      "zoom": 1,
+                      "crop": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "background": "transparent"
+                    },
+                    "thumbnails": {}
                   }
                 ]
               ]

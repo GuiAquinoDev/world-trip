@@ -34,6 +34,7 @@ export function SwiperSliderItem({ item }: any) {
               fontWeight={700}
               color="whiteAlpha.800"
               textAlign="center"
+              maxWidth={'46.7rem'}
             >
               {item.description}
             </Text>

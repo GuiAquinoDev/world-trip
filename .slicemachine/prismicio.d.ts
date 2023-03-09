@@ -11,14 +11,14 @@ interface ContinentDocumentData {
     /**
      * Title field in *Continent*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Title
      * - **Placeholder**: *None*
-     * - **API ID Path**: continent.title
+     * - **API ID Path**: continent.continentTitle
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    title: prismicT.KeyTextField;
+    continentTitle: prismicT.TitleField;
     /**
      * Slice Zone field in *Continent*
      *
