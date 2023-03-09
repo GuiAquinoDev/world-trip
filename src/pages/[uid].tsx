@@ -6,10 +6,10 @@ import * as prismicH from '@prismicio/helpers'
 import { createClient } from '../../prismicio'
 import { components } from '../slices'
 import { GetStaticProps } from 'next'
-import { PageDocument } from '.slicemachine/prismicio'
+import { ContinentDocument } from '.slicemachine/prismicio'
 
 interface PageProps {
-  page: PageDocument
+  page: ContinentDocument
 }
 
 export default function Page({ page }: PageProps) {
