@@ -20,7 +20,7 @@
         }
       },
       "items": {
-        "city_image": {
+        "cityImage": {
           "type": "Image",
           "config": {
             "label": "City Image",
