@@ -20,14 +20,11 @@
         }
       },
       "items": {
-        "cityImage": {
+        "city_image": {
           "type": "Image",
           "config": {
-            "label": "City image",
-            "constraint": {
-              "height": 173,
-              "width": 256
-            },
+            "label": "City Image",
+            "constraint": {},
             "thumbnails": []
           }
         },

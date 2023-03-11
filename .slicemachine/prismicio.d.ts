@@ -148,15 +148,15 @@ interface CitiesSliceDefaultPrimary {
  */
 export interface CitiesSliceDefaultItem {
     /**
-     * City image field in *Cities → Items*
+     * City Image field in *Cities → Items*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: cities.items[].cityImage
+     * - **API ID Path**: cities.items[].city_image
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    cityImage: prismicT.ImageField<never>;
+    city_image: prismicT.ImageField<never>;
     /**
      * City Name field in *Cities → Items*
      *
