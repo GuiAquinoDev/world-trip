@@ -21,6 +21,8 @@ export default function Cities({ slice }: CitiesProps) {
               <Image
                 src={item.cityImage.url!}
                 alt={item.cityImage.alt!}
+                maxH={'10.813rem'}
+                maxW={'16rem'}
                 borderTopRadius={'4px'}
               />
               <Flex

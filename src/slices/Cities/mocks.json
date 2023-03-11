@@ -16,26 +16,24 @@
           [
             "cityImage",
             {
+              "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
-                "width": 5616,
-                "height": 3744
+                "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+                "width": 3456,
+                "height": 3456
               },
-              "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
-              "width": 5616,
-              "height": 3744,
+              "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?rect=0%2C560%2C3456%2C2336&w=256&h=173",
+              "width": 256,
+              "height": 173,
               "edit": {
                 "zoom": 1,
                 "crop": {
                   "x": 0,
-                  "y": 0
+                  "y": 560
                 },
                 "background": "transparent"
               },
-              "credits": null,
-              "alt": null,
-              "__TYPE__": "ImageContent",
               "thumbnails": {}
             }
           ],
@@ -58,7 +56,6 @@
           [
             "stateFlag",
             {
-              "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
                 "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
@@ -76,6 +73,9 @@
                 },
                 "background": "transparent"
               },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
               "thumbnails": {}
             }
           ]
