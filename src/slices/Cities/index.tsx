@@ -23,6 +23,7 @@ export default function Cities({ slice }: CitiesProps) {
                 alt={item.cityImage.alt!}
                 maxH={'10.813rem'}
                 maxW={'16rem'}
+                w={'100%'}
                 borderTopRadius={'4px'}
               />
               <Flex
