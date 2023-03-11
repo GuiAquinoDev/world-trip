@@ -17,7 +17,7 @@ export default function Cities({ slice }: CitiesProps) {
           gridGap={'2.813rem'}
         >
           {slice.items.map((item, i) => (
-            <Box maxW={'16rem'} key={i} mt={'40px'} mx={'auto'}>
+            <Box maxW={'16rem'} w={'100%'} key={i} mt={'40px'} mx={'auto'}>
               <Image
                 src={item.cityImage.url!}
                 alt={item.cityImage.alt!}

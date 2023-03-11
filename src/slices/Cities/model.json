@@ -24,7 +24,10 @@
           "type": "Image",
           "config": {
             "label": "City Image",
-            "constraint": {},
+            "constraint": {
+              "width": 256,
+              "height": 173
+            },
             "thumbnails": []
           }
         },
