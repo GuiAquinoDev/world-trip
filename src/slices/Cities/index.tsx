@@ -59,6 +59,8 @@ export default function Cities({ slice }: CitiesProps) {
                     fontSize={30}
                     src={item.stateFlag.url}
                     alt={item.stateFlag.alt}
+                    borderRadius={'50%'}
+                    objectFit={'cover'}
                   />
                 </Box>
               </Flex>
