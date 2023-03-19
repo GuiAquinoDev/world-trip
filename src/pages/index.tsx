@@ -26,5 +26,6 @@ export async function getStaticProps({ previewData }: GetStaticPropsContext) {
 
   return {
     props: { page },
+    revalidate: 60 * 5, // 5 minutes
   }
 }
