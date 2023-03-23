@@ -16,15 +16,14 @@ export default function Page({ page }: PageProps) {
   const pageTitle = prismicH.asText(page.data.continentTitle)
 
   return (
-    <Fragment>
+    <>
       <Head>
         <title>{pageTitle}</title>
       </Head>
       <SliceZone slices={page.data.slices} components={components} />
-    </Fragment>
+    </>
   )
 }
-
 export const getStaticProps: GetStaticProps = async ({
   params,
   previewData,
